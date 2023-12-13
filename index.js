@@ -5,29 +5,21 @@ function mode() {
 let opArr = ["+", "-", "*", "/", "%", "."]
 let result = document.getElementById("inputText");
 
-
 function dsply(num) {
     result.value += num
 }
 function oprator(oprtr) {
-    debugger
     if (result.value != "") {
         let inputValueArr = result.value.split("")
-        for (i = 0; i < inputValueArr.length; i++) {
-            for (let j = inputValueArr.length - 1; j >= 0; j--) {
-                if (!opArr.includes(inputValueArr[j])) {
-                    result.value += oprtr
-                }
-                result.value + 1
-                break
+        for (let j = inputValueArr.length - 1; j >= 0; j--) {
+            if (!opArr.includes(inputValueArr[j])) {
+                result.value += oprtr
             }
+            // result.value + 1
             break
         }
-
     }
-
 }
-
 function decimal(decml) {
     let inputValueArr = result.value.split("")
     if (result.value == '') {
@@ -36,7 +28,6 @@ function decimal(decml) {
     else if (!inputValueArr.includes(".")) {
         result.value += decml
     }
-
 }
 function calculate() {
     if (result.value == "") {
